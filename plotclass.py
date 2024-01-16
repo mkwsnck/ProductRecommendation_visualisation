@@ -71,14 +71,8 @@ class Product2ProductViewer:
             try:
                 plt.subplot(self.cnt, self.columns, i * self.columns + col + 2)
                 plt.imshow(self.full_dict[row["supprodId2"][col]])
-                if row["type"][col] == 5:  # p2p
-                    plt.title(row["points_raw"][col], fontsize=self.label_font_size, color='green');
-                elif row["type"][col] == 4:  # middle
-                    plt.title(row["points_raw"][col], fontsize=self.label_font_size, color='blue');
-                elif row["type"][col] == 2:  # 2 lvl
-                    plt.title(row["points_raw"][col], fontsize=self.label_font_size, color='orange');
-                elif row["type"][col] == 1:  # 3 lvl
-                    plt.title(row["points_raw"][col], fontsize=self.label_font_size, color='red');
+                plt.title(row["points_raw"][col], fontsize=self.label_font_size, color='green');
+
             except:
                 empty_img = np.array([[[0, 1, 1, 1]]], dtype='uint8')
                 plt.subplot(self.cnt, self.columns, i * self.columns + col + 2)
