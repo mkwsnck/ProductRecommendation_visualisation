@@ -53,7 +53,6 @@ class Product2ProductViewer:
             row_dict = pool1.map(self.download_all, enumerate(self.collected), chunksize=10)
         return dict((key, value) for element in row_dict for nested_dict in element.values() for item in nested_dict for key, value in item.items())
 
-
     def main_chart(self, enumerated_row):
         i = enumerated_row[0]
         row = enumerated_row[1]
